@@ -1,0 +1,225 @@
+/* Header Styling */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #0062cc, #004085); /* Smooth gradient */
+  padding: 0 20px;
+  height: 70px; /* Reduced header height */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Logo Container */
+.logo-container {
+  position: relative;
+  width: 70px; /* Adjusted size */
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: logo-rotate 8s infinite linear, logo-bounce 2s ease-in-out infinite; /* Rotate and bounce together */
+}
+
+/* Logo Styling */
+.logo {
+  width: 55px; /* Adjusted logo size */
+  height: 52px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); /* Glow effect */
+  animation: logo-zoom-spin 5s ease-in-out infinite, logo-scale-up 3s infinite; /* Zoom, spin, and scale effects */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Navigation Links */
+.nav {
+  display: flex;
+  gap: 20px; /* Reduced gap between buttons */
+  font-size: 0.9rem; /* Slightly smaller font size */
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.nav a {
+  color: hsl(0, 33%, 3%);
+  text-decoration: none;
+  padding: 10px 18px; /* Adjusted padding for buttons */
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effects on Navigation */
+.nav a:hover {
+  background: rgba(255, 255, 255, 0.3); /* Subtle highlight */
+  color: #0062cc;
+  transform: scale(1.1); /* Button grows slightly */
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3); /* Floating effect */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Keyframe Animations */
+
+/* Continuous Spin for Logo */
+@keyframes logo-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg); /* Continuous 360-degree spin */
+  }
+}
+
+/* Bounce Effect for Logo Container */
+@keyframes logo-bounce {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-12px); /* Bounce upwards */
+  }
+  50% {
+    transform: translateY(0); /* Back to normal */
+  }
+  75% {
+    transform: translateY(5px); /* Slight bounce down */
+  }
+  100% {
+    transform: translateY(0); /* Reset to normal */
+  }
+}
+
+/* Zoom & Spin for Logo */
+@keyframes logo-zoom-spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1); /* Zoom in and rotate */
+  }
+  100% {
+    transform: rotate(360deg) scale(1); /* Complete rotation with reset scale */
+  }
+}
+
+/* Scale Up Effect for Logo */
+@keyframes logo-scale-up {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15); /* Slight zoom in */
+  }
+  100% {
+    transform: scale(1); /* Reset to normal scale */
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 10px 20px;
+    height: auto;
+  }
+
+  .logo-container {
+    margin-bottom: 15px;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 10px; /* Reduced gap on smaller screens */
+  }
+
+  .nav a {
+    padding: 10px 20px;
+    
+  }
+}
+
+/* Responsive Design */
+
+/* Tablet and Small Screen Sizes */
+@media (max-width: 1024px) {
+  .header {
+    flex-direction: column; /* Stack header elements vertically */
+    justify-content: flex-start;
+    padding: 10px 20px;
+  }
+
+  .logo-container {
+    margin-bottom: 15px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .nav {
+    flex-direction: row; /* Keep the nav items in a row */
+    gap: 15px;
+    justify-content: center; /* Center navigation items */
+    width: 100%;
+  }
+
+  .nav a {
+    padding: 10px 20px;
+    text-align: center; /* Center align text inside buttons */
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Stack header elements vertically */
+    padding: 10px;
+  }
+
+  .logo-container {
+    margin-bottom: 15px;
+    width: 55px;
+    height: 55px;
+  }
+
+  .nav {
+    flex-direction: column; /* Stack nav items vertically */
+    gap: 10px;
+    align-items: center; /* Center-align navigation items */
+    width: 100%;
+  }
+
+  .nav a {
+    padding: 12px 20px;
+    width: 100%; /* Full-width buttons on mobile */
+    text-align: center;
+  }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 5px;
+    flex-direction: column; /* Stack header elements vertically */
+    justify-content: center;
+  }
+
+  .logo-container {
+    margin-bottom: 15px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .nav {
+    flex-direction: column; /* Stack nav items vertically */
+    gap: 8px;
+    align-items: center; /* Center-align navigation items */
+    width: 100%;
+  }
+
+  .nav a {
+    padding: 10px 15px;
+    width: 100%; /* Full-width buttons */
+    text-align: center;
+  }
+}
